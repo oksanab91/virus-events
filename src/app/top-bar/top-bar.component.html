@@ -1,0 +1,10 @@
+<div slass ="container">
+  <ul class="navbar nav-items w-100">
+    <span class="navbar-brand mb-0" *ngIf="user">User: <b>{{user.fname}} {{user.lname}}</b></span>
+    <div class="d-flex nav-right">
+      <li class="nav-item">
+        Number of Potential Infections: <b>{{infectNumber}}</b>
+      </li>      
+    </div>  
+  </ul>
+</div>

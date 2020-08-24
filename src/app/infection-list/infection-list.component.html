@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="list-header">
+    <h4>{{title}}</h4>
+  </div>  
+
+  <div class="row clear-all">
+    <div class="col-lg-4 col-md-4 col-12 clear-all infect-list">  
+        <div *ngFor="let infect of infectList; let i = index; trackBy: trackByFn" 
+          (click)="selectInfectEvent(i)">
+
+            <ul class="list-group list-group-flush">
+              <a class="list-group-item" [routerLink]="['/infections/details', infect.id]"
+                [class.active]="selectedInd === i">{{infect.datetime | date: "MMM d, y"}}
+              </a>
+            </ul>
+
+        </div> 
+    </div>
+    
+    <div class="col-lg-8 col-md-8 col-12 clear-all">      
+      <router-outlet></router-outlet>
+    </div>
+
+  </div>
+</div>

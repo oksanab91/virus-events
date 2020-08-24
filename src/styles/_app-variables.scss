@@ -1,0 +1,62 @@
+$theme-colors: (
+  'primary': (
+    'base':#006097,
+    'light': #0071b3
+  ),
+  'success': (
+    'base': #b3d98c,
+    'light': #cce6b3
+  ),
+  'danger': (
+    'base': #e74c3c,  
+    'light': #f7c0bb,
+    'dark': #9f2214
+  ),
+  'background': (
+    'base': #f4f5f5,
+    'light': #fff,
+    'dark': #ddd
+  ),  
+  'font-color': (
+    'base': #212529,
+    'light': #ffffff
+  )  
+);
+
+$theme-font: (
+  'base':(
+    'family': ('Open Sans', sans-serif),
+    'size': 16px
+    ),
+  'mobile':(
+    'family': ('Open Sans', sans-serif),
+    'size': 15px
+  )
+);
+
+@function theme-color($key: 'primary', $variant: 'base') {
+    $map: map-get($theme-colors, $key);
+    @return map-get($map, $variant);
+};
+  
+@function theme-font($key: 'base', $variant: 'family') {
+    $map: map-get($theme-font, $key);
+    @return map-get($map, $variant);  
+};
+
+
+@mixin clearfix {
+    &::after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin theme-border-font {
+    border: 1px solid rgba(73, 80, 87, 0.5);
+    box-shadow: 0 1px 10px rgba(61,72,81,0.4);
+    font-size: 1rem;
+    font-family: theme-font();
+    color: theme-color(font-color, base);
+}

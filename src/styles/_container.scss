@@ -1,0 +1,55 @@
+.navbar{
+    color: theme-color(font-color, light);
+
+    .nav-right{
+        margin-right: 0;
+        display: flex;
+    }
+}
+
+.nav-items {    
+    list-style-type: none;    
+}
+
+.top-bar {
+    background-color: theme-color(primary, base);
+}
+
+.infect-list {
+    padding-right: 15px;
+}
+
+.list-group-item {
+    text-decoration: none;
+    color: theme-color(font-color, base);
+    &:hover {
+        text-decoration: none;
+        color: theme-color(primary, base);
+        cursor: pointer;         
+    }  
+}
+
+.list-group-item.active {
+    background-color: theme-color(primary, base);
+    color: theme-color(font-color, light);
+}
+
+
+.list-header {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+
+@media screen and (max-width: 800px) {
+    .infect-list {
+        padding: 0;
+        padding-bottom: 15px;
+    }
+}
+
+@media screen and (max-width: 580px) {
+    .list-group, .list-header{
+        text-align: center;
+    }
+}

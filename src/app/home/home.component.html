@@ -1,0 +1,10 @@
+<div class="row clear-all">
+  <ng-container *ngIf="(values$ | async) as values">
+    <div class="container-fluid top-bar">
+      <top-bar [user]="values.userState.user" [infectNumber]="values.infectState.infections.length"></top-bar>
+    </div>
+    <div class="col-12 col-md-12 col-lg-12 clear-all">
+      <infection-list [infectList]="values.infectState.infections"></infection-list>
+    </div>
+  </ng-container>    
+</div>
