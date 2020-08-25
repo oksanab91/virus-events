@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { EventsService } from '../services/infection-events.service';
 import { Observable, forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators';
@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
   values$: Observable<any>
   userId = 1
 
@@ -21,12 +21,16 @@ export class HomeComponent implements OnInit {
   getCombine() {
     this.values$ = forkJoin(
       this.store.loadUser(this.userId),
-      this.store.loadInfections(this.userId)      
+      this.store.loadInfections(this.userId),
+      this.store.loadInfection(1)     
     ).pipe(
-      map(([userState, infectState]) => {        
-        return { userState, infectState };
+      map(([userState, infectState, selectedState]) => {        
+        return { userState, infectState, selectedState };
       })
     );
   }
 
+  ngOnDestroy() {
+    localStorage.clear()
+  }
 }

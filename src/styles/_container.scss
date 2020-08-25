@@ -1,4 +1,6 @@
 .navbar{
+    margin-bottom: 0;
+    padding: 1rem;
     color: theme-color(font-color, light);
 
     .nav-right{
@@ -16,7 +18,11 @@
 }
 
 .infect-list {
-    padding-right: 15px;
+    padding-right: 1rem;
+}
+
+.list-container{
+    padding-bottom: 1rem;
 }
 
 .list-group-item {
@@ -36,20 +42,24 @@
 
 
 .list-header {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 
 @media screen and (max-width: 800px) {
     .infect-list {
         padding: 0;
-        padding-bottom: 15px;
+        padding-bottom: 1rem;
     }
 }
 
 @media screen and (max-width: 580px) {
     .list-group, .list-header{
         text-align: center;
+    }
+
+    .navbar-brand{
+        padding-bottom: 1rem;
     }
 }

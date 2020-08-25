@@ -8,6 +8,7 @@ import { InfectionListComponent } from './infection-list/infection-list.componen
 import { InfectionDetailsComponent } from './infection-details/infection-details.component';
 import { TopBarComponent } from './top-bar/top-bar.component';
 import { HomeComponent } from './home/home.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HomeComponent } from './home/home.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule
   ],

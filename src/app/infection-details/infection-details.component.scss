@@ -1,1 +1,20 @@
-@import "../../styles/card.scss";
+@import "../../styles/app-variables";
+@import "../../styles/card";
+
+.maps-link {
+    text-decoration: none;
+    color: theme-color(font-color, base);
+    &:hover {
+        text-decoration: none;
+        color: theme-color(primary, base);
+        cursor: pointer;         
+    }  
+}
+
+.gps-coord {
+    display: inline-flex;
+
+    div{
+        padding-right: 1rem;
+    }
+}

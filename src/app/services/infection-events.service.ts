@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject, of } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-import { User, Infection } from '../models';
+import { User, Infection, InfectionMap } from '../models';
 import { ApiService } from './api.service';
 
 
 export class EventState {
   infections: Infection[] = [];
-  selectedInfection: Infection = null;
+  selectedInfection: InfectionMap = null;
   user: User = null;  
 }
 
@@ -29,11 +29,11 @@ export class EventsService {
     this.state$ = this._state$.asObservable()    
   }
 
-  get state (): {infections: Infection[], selectedInfection: Infection, user: User} {
+  get state (): {infections: Infection[], selectedInfection: InfectionMap, user: User} {
     return this._state$.getValue()
   }
 
-  setState (nextState: {infections: Infection[], selectedInfection: Infection, user: User}): void {    
+  setState (nextState: {infections: Infection[], selectedInfection: InfectionMap, user: User}): void {    
       this._state$.next(nextState)
   }
 
@@ -49,7 +49,7 @@ export class EventsService {
       this.setState({
           ...this.state,
           infections: [...data],
-          selectedInfection: data.length>0 ? {...data[0]} : null         
+          selectedInfection: data.length>0 ? {...data[0], map: ''} : null         
         })
         
       return this.state

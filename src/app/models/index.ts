@@ -1,10 +1,11 @@
 import { User } from './user';
-import { Infection } from './infection';
+import { Infection, InfectionMap } from './infection';
 
 
 export const models = [
     User,
-    Infection
+    Infection,
+    InfectionMap
 ];
 
 export * from './user';

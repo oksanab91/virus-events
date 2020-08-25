@@ -3,3 +3,7 @@ export class Infection {
     location: {lon: number, lat: number}
     datetime: string
 }
+
+export class InfectionMap extends Infection {
+    map: string
+}

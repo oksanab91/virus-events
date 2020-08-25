@@ -1,8 +1,18 @@
-<div class="card details-card">
-  <div class="card-body" *ngIf="infection$ | async as infection">     
-    <div class="card-block">
-        <p class="card-text"><b>Date: </b>{{infection.datetime | date: "MMM d, y"}}</p>
-        <p class="card-title"><b>Location: </b>{{infection.location.lat}} {{infection.location.lon}}</p>      
-    </div>
+<ng-container *ngIf="selected$ | async as selected">
+  <div class="card details-card" [@fadeInAnimation]="">
+    <div class="card-body">     
+      <div class="card-block">
+        <label for="date">Date</label>
+        <p id="date">{{selected.datetime | date:'long'}}</p>
+
+        <label for="location">Location</label>
+        <a href="{{selected.map}}" id="location" class="maps-link" *ngIf="selected.location" aria-label="Location">
+          <div class="gps-coord">
+            <div>Latitude: {{selected.location.lat}}</div>
+            <div>Longitude: {{selected.location.lon}}</div>
+          </div>          
+        </a>     
+      </div>
+    </div>  
   </div>
-</div>
+</ng-container>

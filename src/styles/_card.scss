@@ -21,9 +21,9 @@
     border: none;
 }
 
-
-@media screen and (max-width: 580px) {    
-    .card-block{
-        text-align: center;
+.card-block {
+    label {
+        font-weight: 500;
+        display: block;       
     }
 }

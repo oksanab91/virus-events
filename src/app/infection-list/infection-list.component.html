@@ -1,16 +1,17 @@
-<div class="container">
+<div class="container list-container">
   <div class="list-header">
     <h4>{{title}}</h4>
-  </div>  
-
+  </div> 
+ 
   <div class="row clear-all">
-    <div class="col-lg-4 col-md-4 col-12 clear-all infect-list">  
+    <div class="col-lg-4 col-md-4 col-12 clear-all infect-list" [@fadeInAnimation]=''>  
         <div *ngFor="let infect of infectList; let i = index; trackBy: trackByFn" 
-          (click)="selectInfectEvent(i)">
+          (click)="selectInfectEvent(i)"y>
 
             <ul class="list-group list-group-flush">
               <a class="list-group-item" [routerLink]="['/infections/details', infect.id]"
-                [class.active]="selectedInd === i">{{infect.datetime | date: "MMM d, y"}}
+                [class.active]="selectedInd === i" aria-label="Details">
+                {{infect.datetime | date: "MMM d, y"}}
               </a>
             </ul>
 
