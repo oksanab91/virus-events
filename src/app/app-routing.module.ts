@@ -1,19 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { InfectionDetailsComponent } from './infection-details/infection-details.component';
-import { HomeComponent } from './home/home.component';
+import { AppStartComponent } from './app-start/app-start.component';
 
 const routes: Routes = [
-  { path: 'infections', 
-    component: HomeComponent,
-    children: [
-      {
-        path: 'details/:id',
-        component: InfectionDetailsComponent
-      }      
-    ]  
-  },   
-  { path: '', redirectTo: '/infections', pathMatch: 'full' }
+  { path: 'start', component: AppStartComponent },
+  { path: 'infections', loadChildren: () => import('./main/main.module').then(m => m.MainModule)},   
+  { path: '', redirectTo: '/start', pathMatch: 'full' }
 ];
 
 @NgModule({

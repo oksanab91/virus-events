@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { User } from '../models';
+import { User } from '../../models';
 
 @Component({
   selector: 'top-bar',

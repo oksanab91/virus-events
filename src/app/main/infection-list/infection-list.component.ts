@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Infection } from '../models';
-import { fadeInAnimation } from '../animations/fade.animation';
+import { Infection } from '../../models';
+import { fadeInAnimation } from '../../animations/fade.animation';
 
 
 
@@ -20,8 +20,10 @@ export class InfectionListComponent implements OnInit {
   constructor(private router: Router) { }
   
   ngOnInit() {
-    if(this.infectList.length > 0) {      
-      this.router.navigateByUrl(`/infections/details/${this.infectList[0].id}`)
+    if(this.infectList.length > 0) {
+      setTimeout(() => {      
+        this.router.navigateByUrl(`/infections/details/${this.infectList[0].id}`)
+      })
     }
   }
 

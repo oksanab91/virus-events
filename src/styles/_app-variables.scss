@@ -1,7 +1,8 @@
 $theme-colors: (
   'primary': (
     'base':#006097,
-    'light': #0071b3
+    'light': #0071b3,
+    'dark': #004166
   ),
   'success': (
     'base': #b3d98c,
@@ -59,4 +60,14 @@ $theme-font: (
     font-size: 1rem;
     font-family: theme-font();
     color: theme-color(font-color, base);
+}
+
+@mixin main-background-image($url) {
+  background-image: url($url);
+  background-size: cover;  
+}
+
+@mixin main-background-color {    
+  background-image: linear-gradient(180deg, theme-color(primary, dark), theme-color());
+  background-size: cover;
 }

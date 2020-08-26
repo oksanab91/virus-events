@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { EventsService } from '../services/infection-events.service';
+import { EventsService } from '../../services/infection-events.service';
 import { Observable, forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators';
 

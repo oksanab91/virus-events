@@ -1,0 +1,26 @@
+@import "../../styles/app-variables";
+@import "../../styles/container";
+
+.container-fluid {
+    height: 100%;
+    display: flex;      
+    justify-content: center;
+    text-align: center;
+    @include main-background-color;
+  
+    a {
+      margin: auto;    
+      color: theme-color(font-color, light);
+      text-decoration: none;
+      border: 1px solid theme-color(font-color, light);
+      padding: 1rem 2rem;  
+      text-transform: uppercase;
+      display: block;
+      
+      h2 {
+        margin: 0;
+        font-weight: 300;
+      }
+    }    
+    
+  }
